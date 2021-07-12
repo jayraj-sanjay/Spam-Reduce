@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>BigData2</display-name>
+	<servlet>
+		<servlet-name>Account</servlet-name>
+		<servlet-class>com.spamdoop.servlet.UserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Account</servlet-name>
+		<url-pattern>/account</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>obf</servlet-name>
+		<servlet-class>com.spamdoop.servlet.ObfuscationServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>obf</servlet-name>
+		<url-pattern>/obf</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>results</servlet-name>
+		<servlet-class>com.spamdoop.servlet.ResultServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>results</servlet-name>
+		<url-pattern>/results</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>spamdetection</servlet-name>
+		<servlet-class>com.spamdoop.servlet.SpamDetectionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>spamdetection</servlet-name>
+		<url-pattern>/spamdetection</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>download</servlet-name>
+		<servlet-class>com.spamdoop.servlet.DownloadFileServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>download</servlet-name>
+		<url-pattern>/download</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>downloadobf</servlet-name>
+		<servlet-class>com.spamdoop.servlet.DownloadFileObfServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>downloadobf</servlet-name>
+		<url-pattern>/downloadobf</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UploadServlet</servlet-name>
+		<servlet-class>com.spamdoop.servlet.UploadServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UploadServlet</servlet-name>
+		<url-pattern>/UploadServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>viewfiles</servlet-name>
+		<servlet-class>com.spamdoop.servlet.ViewFilesServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>viewfiles</servlet-name>
+		<url-pattern>/viewfiles</url-pattern>
+	</servlet-mapping>
+
+	<context-param>
+		<description>Location to store uploaded file</description>
+		<param-name>file-upload</param-name>
+		<param-value>/root/input/</param-value>
+	</context-param>
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
